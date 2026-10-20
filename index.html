@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>د. مهريبان أمين - استشاري جراحات التجميل</title>
+  
+  <!-- Tailwind CSS & Google Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { cairo: ['Cairo', 'sans-serif'] },
+          colors: {
+            gold: { 400: '#e5c158', 500: '#c5a059', 600: '#a37f38' },
+            luxury: { 900: '#0f172a', 800: '#1e293b', 700: '#334155' }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { font-family: 'Cairo', sans-serif; scroll-behavior: smooth; background-color: #fdfbf7; }
+    .gold-gradient { background: linear-gradient(135deg, #c5a059 0%, #e5c158 50%, #a37f38 100%); }
+    .gold-text { background: linear-gradient(135deg, #c5a059, #e5c158); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .page-section { display: none; }
+    .page-section.active { display: block; }
+  </style>
+</head>
+<body class="text-slate-800 antialiased pb-20 md:pb-0">
+
+  <!-- MAIN NAVIGATION BAR -->
+  <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+      
+      <!-- Brand Logo & Title -->
+      <a href="javascript:void(0)" onclick="navigateTo('home')" class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-full overflow-hidden bg-black border-2 border-gold-500 shadow-md shrink-0 flex items-center justify-center">
+          <img src="https://lh3.googleusercontent.com/d/1Mj2jC-uNJOGJ95O4euhqNcg80zf5XkZm" alt="Logo" class="w-full h-full object-cover">
+        </div>
+        <div>
+          <h1 class="font-extrabold text-base sm:text-lg text-luxury-900 leading-snug">د. مهريبان أمين</h1>
+          <p class="text-[11px] sm:text-xs text-gold-600 font-semibold leading-none">استشاري جراحات التجميل</p>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <div class="hidden lg:flex items-center gap-6 font-semibold text-xs sm:text-sm text-slate-700">
+        <a href="javascript:void(0)" onclick="navigateTo('home')" class="hover:text-gold-600 transition">الرئيسية</a>
+        <a href="javascript:void(0)" onclick="navigateTo('body-4d')" class="hover:text-gold-600 transition">تجميل الجسم 4D</a>
+        <a href="javascript:void(0)" onclick="navigateTo('face-aesthetic')" class="hover:text-gold-600 transition">تجميل الوجه</a>
+        <a href="javascript:void(0)" onclick="navigateTo('men-aesthetic')" class="hover:text-gold-600 transition">تجميل للرجال</a>
+        <a href="javascript:void(0)" onclick="navigateTo('before-after-page')" class="hover:text-gold-600 transition">حالات قبل وبعد</a>
+        <a href="https://wa.me/201099667553" target="_blank" class="gold-gradient text-white px-5 py-2 rounded-full text-xs font-bold shadow-md hover:opacity-90 transition">حجز استشارة</a>
+      </div>
+
+      <!-- Hamburger Button (Mobile) -->
+      <button onclick="toggleMenu()" class="lg:hidden p-2 rounded-xl text-slate-700 hover:bg-slate-100 transition" aria-label="القائمة">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-100 px-6 py-4 space-y-3 font-semibold text-sm text-slate-700 shadow-xl">
+      <a href="javascript:void(0)" onclick="navigateTo('home'); toggleMenu();" class="block py-2 border-b border-slate-50">الرئيسية</a>
+      <a href="javascript:void(0)" onclick="navigateTo('body-4d'); toggleMenu();" class="block py-2 border-b border-slate-50">تجميل الجسم 4D</a>
+      <a href="javascript:void(0)" onclick="navigateTo('face-aesthetic'); toggleMenu();" class="block py-2 border-b border-slate-50">تجميل الوجه</a>
+      <a href="javascript:void(0)" onclick="navigateTo('men-aesthetic'); toggleMenu();" class="block py-2 border-b border-slate-50">تجميل للرجال</a>
+      <a href="javascript:void(0)" onclick="navigateTo('before-after-page'); toggleMenu();" class="block py-2 border-b border-slate-50">حالات قبل وبعد</a>
+      <a href="https://wa.me/201099667553" target="_blank" class="block py-2.5 text-center gold-gradient text-white rounded-xl text-xs font-bold shadow">حجز استشارة الآن</a>
+    </div>
+  </nav>
+
+  <!-- ==================== HOME PAGE ==================== -->
+  <div id="home" class="page-section active">
+    
+    <!-- HERO SECTION -->
+    <section class="relative bg-luxury-900 text-white py-28 lg:py-40 min-h-[75vh] flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0 opacity-40 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/d/1MXPJvC4SBbqz7UC3eZpbiInpvphVDyOO');"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-luxury-900 via-luxury-900/60 to-transparent"></div>
+      
+      <div class="max-w-4xl mx-auto px-6 relative z-10 text-center space-y-8">
+        <p class="text-slate-100 text-base lg:text-xl leading-relaxed font-semibold max-w-2xl mx-auto drop-shadow-md">
+          خبرة في جراحات التجميل وتنسيق القوام بأعلى معايير الأمان الطبي والنتائج الطبيعية.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 pt-4">
+          <a href="https://wa.me/201099667553" target="_blank" class="gold-gradient text-white font-bold px-9 py-4 rounded-full shadow-lg hover:scale-105 transition text-xs sm:text-sm">حجز استشارة</a>
+          <a href="javascript:void(0)" onclick="navigateTo('before-after-page')" class="bg-white/10 hover:bg-white/20 text-white font-semibold px-9 py-4 rounded-full border border-white/20 transition text-xs sm:text-sm backdrop-blur-sm">شاهد الحالات</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANIMATED NUMBERS / STATS SECTION -->
+    <section id="stats-section" class="bg-white py-12 border-b border-slate-100 shadow-sm">
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="p-2">
+          <p class="text-3xl lg:text-4xl font-extrabold gold-text mb-1"><span class="counter" data-target="15">0</span>+</p>
+          <p class="text-xs font-semibold text-slate-600">سنوات الخبرة الطبية</p>
+        </div>
+        <div class="p-2">
+          <p class="text-3xl lg:text-4xl font-extrabold gold-text mb-1"><span class="counter" data-target="5000">0</span>+</p>
+          <p class="text-xs font-semibold text-slate-600">عملية ناجحة</p>
+        </div>
+        <div class="p-2">
+          <p class="text-3xl lg:text-4xl font-extrabold gold-text mb-1"><span class="counter" data-target="4800">0</span>+</p>
+          <p class="text-xs font-semibold text-slate-600">عميل راضٍ عن النتائج</p>
+        </div>
+        <div class="p-2">
+          <p class="text-3xl lg:text-4xl font-extrabold gold-text mb-1"><span class="counter" data-target="1200">0</span>+</p>
+          <p class="text-xs font-semibold text-slate-600">عمليات التاهيل والنحت</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT DOCTOR -->
+    <section class="py-16 bg-slate-50">
+      <div class="max-w-4xl mx-auto px-6 text-center space-y-4">
+        <span class="text-gold-600 font-bold text-xs uppercase tracking-widest">نبذة طبية</span>
+        <h2 class="text-2xl font-extrabold text-luxury-900">د. مهريبان أمين</h2>
+        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+          استشاري جراحات التجميل وتنسيق القوام وتجميل الوجه. تتميز بأسلوب جراحي متطور يعتمد على إبراز الجمال الطبيعي مع أعلى معايير السلامة والأمان الطبي.
+        </p>
+        <div class="flex flex-wrap justify-center gap-3 text-xs font-semibold text-slate-700 pt-2">
+          <span class="p-3 bg-white rounded-xl border border-slate-200 shadow-sm">✨ عضو الجمعية المصرية لجراحي التجميل</span>
+          <span class="p-3 bg-white rounded-xl border border-slate-200 shadow-sm">✨ متخصصة في تقنيات نحت القوام الحديثة</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEDICAL SERVICES -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-6 space-y-8">
+        <div class="text-center space-y-2">
+          <span class="text-gold-600 font-bold text-xs uppercase tracking-widest">خدماتنا</span>
+          <h2 class="text-2xl font-extrabold text-luxury-900">الخدمات الطبية</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div onclick="navigateTo('body-4d')" class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition cursor-pointer group">
+            <div class="h-48 bg-slate-200 relative overflow-hidden">
+              <img src="https://lh3.googleusercontent.com/d/1MURbrr1EwumLypoV0lIaElGVgAuPfJBk" alt="تجميل الجسم 4D" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            </div>
+            <div class="p-5 space-y-2">
+              <h3 class="font-bold text-base text-luxury-900">تجميل الجسم 4D</h3>
+              <p class="text-slate-500 text-xs leading-relaxed">شفط الدهون بالفيزر، نحت الذراعين والفخذين، وتكبير المؤخرة والثدي بالدهون والسيليكون.</p>
+              <span class="text-gold-600 font-bold text-xs inline-block pt-1">عرض التفاصيل ←</span>
+            </div>
+          </div>
+
+          <div onclick="navigateTo('face-aesthetic')" class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition cursor-pointer group">
+            <div class="h-48 bg-slate-200 relative overflow-hidden">
+              <img src="https://lh3.googleusercontent.com/d/1MOAhciFnGU2B3jNTdlyIKaxHKgIyo-Go" alt="تجميل الوجه" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            </div>
+            <div class="p-5 space-y-2">
+              <h3 class="font-bold text-base text-luxury-900">تجميل الوجه</h3>
+              <p class="text-slate-500 text-xs leading-relaxed">تحديد الجولاين، تجميل الجفون العلوية والسفلية، وشد الرقبة واللغلوغ.</p>
+              <span class="text-gold-600 font-bold text-xs inline-block pt-1">عرض التفاصيل ←</span>
+            </div>
+          </div>
+
+          <div onclick="navigateTo('men-aesthetic')" class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition cursor-pointer group">
+            <div class="h-48 bg-slate-200 relative overflow-hidden">
+              <img src="https://lh3.googleusercontent.com/d/1MRm1T0L31GM2Ud5a_KSPcPC34tRe1axD" alt="تجميل للرجال" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            </div>
+            <div class="p-5 space-y-2">
+              <h3 class="font-bold text-base text-luxury-900">تجميل للرجال</h3>
+              <p class="text-slate-500 text-xs leading-relaxed">علاج التثدي عند الرجال، نحت عضلات الصدر ورسم الـ Six Packs.</p>
+              <span class="text-gold-600 font-bold text-xs inline-block pt-1">عرض التفاصيل ←</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BEFORE & AFTER PREVIEW -->
+    <section class="py-16 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-6 space-y-8">
+        <div class="flex items-center justify-between">
+          <div>
+            <span class="text-gold-600 font-bold text-xs uppercase tracking-widest">نتائج حقيقية</span>
+            <h2 class="text-2xl font-extrabold text-luxury-900">حالات قبل وبعد</h2>
+          </div>
+          <a href="javascript:void(0)" onclick="navigateTo('before-after-page')" class="text-xs font-bold text-gold-600 hover:underline">عرض كافة الحالات ←</a>
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-6">
+          <div class="bg-white p-3 rounded-2xl border border-slate-200 shadow-sm">
+            <div class="h-44 bg-slate-200 rounded-xl overflow-hidden">
+              <img src="https://lh3.googleusercontent.com/d/1Lvk3u_Q4r0a99FgMPNaPCESMVMozMeQ6" alt="حالة قبل وبعد" class="w-full h-full object-cover">
+            </div>
+            <p class="text-xs font-bold text-slate-800 mt-2 text-center">نحت القوام 4D</p>
+          </div>
+          <div class="bg-white p-3 rounded-2xl border border-slate-200 shadow-sm">
+            <div class="h-44 bg-slate-200 rounded-xl overflow-hidden">
+              <img src="https://lh3.googleusercontent.com/d/1Lvk3u_Q4r0a99FgMPNaPCESMVMozMeQ6" alt="حالة قبل وبعد" class="w-full h-full object-cover">
+            </div>
+            <p class="text-xs font-bold text-slate-800 mt-2 text-center">تجميل الوجه والجفون</p>
+          </div>
+          <div class="bg-white p-3 rounded-2xl border border-slate-200 shadow-sm">
+            <div class="h-44 bg-slate-200 rounded-xl overflow-hidden">
+              <img src="https://lh3.googleusercontent.com/d/1Lvk3u_Q4r0a99FgMPNaPCESMVMozMeQ6" alt="حالة قبل وبعد" class="w-full h-full object-cover">
+            </div>
+            <p class="text-xs font-bold text-slate-800 mt-2 text-center">علاج التثدي للرجال</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION & CONTACT -->
+    <section class="py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-6 text-center space-y-6">
+        <div>
+          <span class="text-gold-600 font-bold text-xs uppercase tracking-widest">موقعنا</span>
+          <h2 class="text-2xl font-extrabold text-luxury-900 mt-1">عنوان العيادة</h2>
+        </div>
+        <div class="p-6 bg-slate-50 rounded-3xl border border-slate-200 shadow-sm space-y-4 max-w-xl mx-auto">
+          <p class="font-bold text-slate-800 text-sm sm:text-base leading-relaxed">
+            📍 مدينة نصر - الحي العاشر - المنطقة التاسعة ـ مول مصر الطبي
+          </p>
+          <p class="text-slate-600 font-semibold text-sm">
+            📞 الهاتف: <a href="tel:01099667553" class="text-gold-600 underline">01099667553</a>
+          </p>
+          <p class="text-slate-500 text-xs">مواعيد العمل: السبت - الخميس (2:00 ظهراً - 10:00 مساءً)</p>
+          <div class="pt-2">
+            <a href="https://maps.google.com/?q=30.052662,31.374915" target="_blank" class="inline-block gold-gradient text-white font-bold px-8 py-3 rounded-full text-xs shadow-md hover:opacity-90 transition">
+              🗺️ فتح الموقع على Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== PAGE 1: 4D BODY CONTOURING ==================== -->
+  <div id="body-4d" class="page-section">
+    <div class="relative bg-luxury-900 text-white py-16 px-6 text-center">
+      <div class="max-w-4xl mx-auto space-y-3">
+        <h1 class="text-2xl sm:text-4xl font-extrabold gold-text">تجميل ونحت الجسم 4D</h1>
+        <p class="text-xs sm:text-sm text-slate-300">خدمات جراحات تجميل ونحت الجسم وتنسيق القوام بأعلى معايير الأمان الطبي</p>
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 -mt-8 relative z-20">
+      <div class="h-64 sm:h-96 bg-slate-200 rounded-3xl overflow-hidden shadow-xl border-4 border-white">
+        <img src="https://lh3.googleusercontent.com/d/1MURbrr1EwumLypoV0lIaElGVgAuPfJBk" alt="تجميل الجسم 4D" class="w-full h-full object-cover">
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 py-12">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- 1. Vaser Liposuction -->
+        <div class="bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-4">
+          <div class="h-48 bg-slate-100 rounded-2xl overflow-hidden">
+            <img src="https://via.placeholder.com/600x400?text=1.+شفط+الدهون+بالفيزر" alt="شفط الدهون بالفيزر" class="w-full h-full object-cover">
+          </div>
+          <h3 class="text-base font-bold text-luxury-900">1. عملية شفط الدهون بالفيزر (شفط دهون البطن)</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">إجراء جراحي متطور يستخدم تقنية الموجات فوق الصوتية (الفيزر) لإذابة وتفكيك الدهون المستعصية مع تركيز دقيق على نحت منطقة البطن.</p>
+          <a href="https://wa.me/201099667553" target="_blank" class="inline-block text-xs font-bold text-gold-600 hover:underline">استفسر عن شفط دهون البطن ←</a>
+        </div>
+
+        <!-- 2. Arms Liposuction -->
+        <div class="bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-4">
+          <div class="h-48 bg-slate-100 rounded-2xl overflow-hidden">
+            <img src="https://via.placeholder.com/600x400?text=2.+شفط+دهون+الذراعين" alt="شفط دهون الذراعين" class="w-full h-full object-cover">
+          </div>
+          <h3 class="text-base font-bold text-luxury-900">2. عملية شفط دهون الذراعين</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">التخلص من الدهون المترسبة بالذراعين وتنسيق حركتهما وإعادة مشدوديتهما لتتناسق مع بقية تفاصيل الجسم.</p>
+          <a href="https://wa.me/201099667553" target="_blank" class="inline-block text-xs font-bold text-gold-600 hover:underline">استفسر عن شفط الذراعين ←</a>
+        </div>
+
+        <!-- 3. Thighs Liposuction -->
+        <div class="bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-4">
+          <div class="h-48 bg-slate-100 rounded-2xl overflow-hidden">
+            <img src="https://via.placeholder.com/600x400?text=3.+شفط+دهون+الفخذين" alt="شفط دهون الفخذين" class="w-full h-full object-cover">
+          </div>
+          <h3 class="text-base font-bold text-luxury-900">3. عملية شفط دهون الفخذين</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">نحت الفخذين من الداخل والخارج والتخلص من التلاصق والدهون الزائدة لإعطاء مظهر مشدود وانسيابي.</p>
+          <a href="https://wa.me/201099667553" target="_blank" class="inline-block text-xs font-bold text-gold-600 hover:underline">استفسر عن شفط الفخذين ←</a>
+        </div>
+
+        <!-- 4. Buttock Augmentation Fat Graft -->
+        <div class="bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-4">
+          <div class="h-48 bg-slate-100 rounded-2xl overflow-hidden">
+            <img src="https://via.placeholder.com/600x400?text=4.+تكبير+المؤخرة+بالدهون" alt="تكبير المؤخرة بالدهون" class="w-full h-full object-cover">
+          </div>
+          <h3 class="text-base font-bold text-luxury-900">4. تكبير المؤخرة بالدهون الذاتية</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">إعادة توزيع الدهون المستخرجة وتنقيتها وثم إعادة حقنها في المؤخرة لإعطائها المظهر الأنثوي الطبيعي.</p>
+          <a href="https://wa.me/201099667553" target="_blank" class="inline-block text-xs font-bold text-gold-600 hover:underline">استفسر عن تكبير المؤخرة ←</a>
+        </div>
+
+        <!-- 5. Breast Fat Grafting -->
+        <div class="bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-4">
+          <div class="h-48 bg-slate-100 rounded-2xl overflow-hidden">
+            <img src="https://via.placeholder.com/600x400?text=5.+حقن+الثدي+بالدهون" alt="حقن الثدي بالدهون" class="w-full h-full object-cover">
+          </div>
+          <h3 class="text-base font-bold text-luxury-900">5. حقن الثدي بالدهون الذاتية</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">زيادة حجم الثدي وتصحيح التباين بطريقة طبيعية 100% باستخدام دهون الجسم الذاتية دون جسم غريب.</p>
+          <a href="https://wa.me/201099667553" target="_blank" class="inline-block text-xs font-bold text-gold-600 hover:underline">استفسر عن حقن الثدي بالدهون ←</a>
+        </div>
+
+        <!-- 6. Back Liposuction -->
+        <div class="bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-4">
+          <div class="h-48 bg-slate-100 rounded-2xl overflow-hidden">
+            <img src="https://via.placeholder.com/600x400?text=6.+شفط+دهون+الظهر" alt="شفط دهون الظهر" class="w-full h-full object-cover">
+          </div>
+          <h3 class="text-base font-bold text-luxury-900">6. شفط دهون الظهر</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">التخلص من ثنيات الظهر ودهون أعلى وأسفل الخصر للحصول على ظهر مفرود ومشدود ومتناسق.</p>
+          <a href="https://wa.me/201099667553" target="_blank" class="inline-block text-xs font-bold text-gold-600 hover:underline">استفسر عن شفط دهون الظهر ←</a>
+        </div>
+
+        <!-- 7. Silicone Breast Augmentation -->
+        <div class="bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-4 md:col-span-2 lg:col-span-1">
+          <div class="h-48 bg-slate-100 rounded-2xl overflow-hidden">
+            <img src="https://via.placeholder.com/600x400?text=7.+تكبير+الثدي+بالسيليكون" alt="تكبير الثدي بالسيليكون" class="w-full h-full object-cover">
+          </div>
+          <h3 class="text-base font-bold text-luxury-900">7. تكبير الثدي بالسيليكون</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">استخدام حشوات السيليكون المعتمدة عالمياً للحصول على تكبير دائم للثدي مع تحسين القوام بأعلى أمان.</p>
+          <a href="https://wa.me/201099667553" target="_blank" class="inline-block text-xs font-bold text-gold-600 hover:underline">استفسر عن تكبير الثدي بالسيليكون ←</a>
+        </div>
+
+      </div>
+
+      <div class="bg-luxury-900 text-white p-8 rounded-3xl text-center space-y-4 mt-12">
+        <h3 class="text-lg font-bold gold-text">جاهزة للحصول على القوام المثالي؟</h3>
+        <p class="text-xs text-slate-300 max-w-xl mx-auto">تواصل معنا اليوم لحجز استشارة نحت الجسم وتحديد الإجراء المناسب لكِ مع د. مهريبان أمين.</p>
+        <a href="https://wa.me/201099667553" target="_blank" class="inline-block gold-gradient text-white font-bold px-8 py-3 rounded-full text-xs shadow-lg">احجزي موعدك الآن عبر الواتساب Direct</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 2: FACE AESTHETIC ==================== -->
+  <div id="face-aesthetic" class="page-section">
+    <div class="relative bg-luxury-900 text-white py-16 px-6 text-center">
+      <div class="max-w-4xl mx-auto space-y-3">
+        <h1 class="text-2xl sm:text-4xl font-extrabold gold-text">تجميل الوجه والرقبة</h1>
+        <p class="text-xs sm:text-sm text-slate-300">أحدث التقنيات لجراحة وتجميل ملامح الوجه بطرق طبيعية وإبراز الجمال</p>
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 -mt-8 relative z-20">
+      <div class="h-64 sm:h-96 bg-slate-200 rounded-3xl overflow-hidden shadow-xl border-4 border-white">
+        <img src="https://lh3.googleusercontent.com/d/1MOAhciFnGU2B3jNTdlyIKaxHKgIyo-Go" alt="تجميل الوجه" class="w-full h-full object-cover">
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 py-12 space-y-12">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-4">
+          <div class="h-48 bg-slate-100 rounded-2xl overflow-hidden">
+            <img src="https://via.placeholder.com/600x400?text=تحديد+الجولاين" alt="Jawline" class="w-full h-full object-cover">
+          </div>
+          <h3 class="text-lg font-bold text-luxury-900">1. تحديد الجولاين (Jawline Definition)</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">تحديد خط الفك وإبرازه بدقة للحصول على مظهر شاب ومتناسق.</p>
+          <a href="https://wa.me/201099667553" target="_blank" class="inline-block text-xs font-bold text-gold-600 hover:underline">استفسر عن تحديد الجولاين ←</a>
+        </div>
+
+        <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-4">
+          <div class="h-48 bg-slate-100 rounded-2xl overflow-hidden">
+            <img src="https://via.placeholder.com/600x400?text=تجميل+الجفون" alt="Eyelids" class="w-full h-full object-cover">
+          </div>
+          <h3 class="text-lg font-bold text-luxury-900">2. تجميل الجفون العلوية والسفلية (Blepharoplasty)</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">التخلص من الجلد المترهل والانتفاخات والدهون الزائدة حول العينين.</p>
+          <a href="https://wa.me/201099667553" target="_blank" class="inline-block text-xs font-bold text-gold-600 hover:underline">استفسر عن شد الجفون ←</a>
+        </div>
+
+        <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-4">
+          <div class="h-48 bg-slate-100 rounded-2xl overflow-hidden">
+            <img src="https://via.placeholder.com/600x400?text=شد+الرقبة" alt="Neck Lift" class="w-full h-full object-cover">
+          </div>
+          <h3 class="text-lg font-bold text-luxury-900">3. شد الرقبة والتخلص من اللغلوغ (Double Chin)</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">شفط دهون أسفل الذقن وإزالة الترهلات بالرقبة لمظهر مثالي.</p>
+          <a href="https://wa.me/201099667553" target="_blank" class="inline-block text-xs font-bold text-gold-600 hover:underline">استفسر عن شد الرقبة ←</a>
+        </div>
+
+        <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-4">
+          <div class="h-48 bg-slate-100 rounded-2xl overflow-hidden">
+            <img src="https://via.placeholder.com/600x400?text=حقن+الدهون" alt="Fat Grafting" class="w-full h-full object-cover">
+          </div>
+          <h3 class="text-lg font-bold text-luxury-900">4. حقن الدهون الذاتية للوجه (Facial Fat Transfer)</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">إعادة تعبئة الخدود والمناطق الغائرة بالوجه بالدهون الطبيعية.</p>
+          <a href="https://wa.me/201099667553" target="_blank" class="inline-block text-xs font-bold text-gold-600 hover:underline">استفسر عن حقن الدهون ←</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 3: MALE AESTHETICS ==================== -->
+  <div id="men-aesthetic" class="page-section">
+    <div class="relative bg-luxury-900 text-white py-16 px-6 text-center">
+      <div class="max-w-4xl mx-auto space-y-3">
+        <h1 class="text-2xl sm:text-4xl font-extrabold gold-text">التجميل ونحت القوام للرجال</h1>
+        <p class="text-xs sm:text-sm text-slate-300">جراحات مخصصة للرجال لعلاج التثدي ونحت القوام المظهر الرياضي</p>
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 -mt-8 relative z-20">
+      <div class="h-64 sm:h-96 bg-slate-200 rounded-3xl overflow-hidden shadow-xl border-4 border-white">
+        <img src="https://lh3.googleusercontent.com/d/1MRm1T0L31GM2Ud5a_KSPcPC34tRe1axD" alt="تجميل للرجال" class="w-full h-full object-cover">
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 py-12 space-y-12">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-4">
+          <div class="h-48 bg-slate-100 rounded-2xl overflow-hidden">
+            <img src="https://via.placeholder.com/600x400?text=علاج+التثدي" alt="Gynecomastia" class="w-full h-full object-cover">
+          </div>
+          <h3 class="text-lg font-bold text-luxury-900">1. علاج التثدي الذكوري (Gynecomastia)</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">التخلص النهائي من بروز منطقة الصدر والدهون والغدد الزائدة بفتحات صغرى.</p>
+          <a href="https://wa.me/201099667553" target="_blank" class="inline-block text-xs font-bold text-gold-600 hover:underline">استفسر عن علاج التثدي ←</a>
+        </div>
+
+        <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-4">
+          <div class="h-48 bg-slate-100 rounded-2xl overflow-hidden">
+            <img src="https://via.placeholder.com/600x400?text=نحت+العضلات" alt="Six Packs" class="w-full h-full object-cover">
+          </div>
+          <h3 class="text-lg font-bold text-luxury-900">2. نحت عضلات الصدر ورسم Six Packs</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">شفط الدهون حول العضلات بدقة لإبراز تقسيمات البطن والصدر الرياضية.</p>
+          <a href="https://wa.me/201099667553" target="_blank" class="inline-block text-xs font-bold text-gold-600 hover:underline">استفسر عن نحت العضلات ←</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 4: BEFORE & AFTER FULL PAGE ==================== -->
+  <div id="before-after-page" class="page-section">
+    <div class="relative bg-luxury-900 text-white py-16 px-6 text-center">
+      <div class="max-w-4xl mx-auto space-y-3">
+        <h1 class="text-2xl sm:text-4xl font-extrabold gold-text">معرض حالات قبل وبعد</h1>
+        <p class="text-xs sm:text-sm text-slate-300">نتائج حقيقية وموثقة بعيادة د. مهريبان أمين</p>
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 -mt-8 relative z-20 mb-12">
+      <div class="h-64 sm:h-96 bg-slate-200 rounded-3xl overflow-hidden shadow-xl border-4 border-white">
+        <img src="https://lh3.googleusercontent.com/d/1Lvk3u_Q4r0a99FgMPNaPCESMVMozMeQ6" alt="حالات قبل وبعد" class="w-full h-full object-cover">
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 py-4 space-y-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <script>
+          for(let i = 1; i <= 6; i++) {
+            document.write(`
+              <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm p-4 hover:shadow-md transition text-center space-y-2">
+                <div class="h-48 bg-slate-100 rounded-xl flex items-center justify-center text-slate-400 font-bold text-xs border border-dashed border-slate-300">
+                  [ مكان صورة حالة رقم ${i} ]
+                </div>
+                <p class="font-bold text-xs text-slate-800">حالة رقم ${i}</p>
+              </div>
+            `);
+          }
+        </script>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-luxury-900 text-slate-300 pt-10 pb-20 md:pb-8 border-t border-slate-800 mt-12">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-right text-xs">
+      <div>
+        <h3 class="font-bold text-gold-400 text-sm mb-2">د. مهريبان أمين</h3>
+        <p class="text-slate-400">استشاري جراحات التجميل وتنسيق القوام وتجميل الوجه.</p>
+      </div>
+      <div>
+        <h4 class="font-bold text-white text-xs mb-2">الروابط السريعة</h4>
+        <div class="flex justify-center md:justify-start gap-4 text-slate-400">
+          <a href="javascript:void(0)" onclick="navigateTo('home')">الرئيسية</a>
+          <a href="javascript:void(0)" onclick="navigateTo('body-4d')">تجميل الجسم</a>
+          <a href="javascript:void(0)" onclick="navigateTo('face-aesthetic')">تجميل الوجه</a>
+        </div>
+      </div>
+      <div>
+        <a href="https://wa.me/201099667553" target="_blank" class="inline-block gold-gradient text-white font-bold py-2 px-6 rounded-full">تواصل عبر الواتساب Direct</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE FLOATING ACTION BAR -->
+  <div class="fixed bottom-3 left-3 right-3 z-50 lg:hidden flex gap-2 bg-luxury-900/95 backdrop-blur-md p-2 rounded-full shadow-2xl border border-slate-700/50">
+    <a href="tel:01099667553" class="flex-1 flex items-center justify-center gap-2 bg-slate-800 text-white py-2.5 rounded-full text-xs font-bold">
+      📞 اتصال
+    </a>
+    <a href="https://wa.me/201099667553" target="_blank" class="flex-1 flex items-center justify-center gap-2 bg-emerald-600 text-white py-2.5 rounded-full text-xs font-bold">
+      💬 واتساب
+    </a>
+  </div>
+
+  <!-- JAVASCRIPT FOR NAVIGATION & COUNTER ANIMATION -->
+  <script>
+    function navigateTo(pageId) {
+      document.querySelectorAll('.page-section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(pageId).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toggleMenu() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    }
+
+    // Number Counter Animation
+    let animated = false;
+    window.addEventListener('scroll', () => {
+      const statsSec = document.getElementById('stats-section');
+      if (!statsSec) return;
+      const rect = statsSec.getBoundingClientRect();
+      if (rect.top < window.innerHeight && !animated) {
+        animated = true;
+        document.querySelectorAll('.counter').forEach(counter => {
+          const target = +counter.getAttribute('data-target');
+          let count = 0;
+          const speed = target / 50;
+          const update = () => {
+            count += speed;
+            if (count < target) {
+              counter.innerText = Math.ceil(count);
+              setTimeout(update, 30);
+            } else {
+              counter.innerText = target;
+            }
+          };
+          update();
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
